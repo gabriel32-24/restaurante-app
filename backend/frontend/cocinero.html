@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interfaz del Cocinero</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>👨‍🍳 Dashboard de Cocina</h1>
+    <div class="topbar-usuario">
+      <span id="nombre-usuario"></span>
+      <button id="btn-logout" class="btn-secundario">Salir</button>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="panel panel-ancho">
+      <h2>Pedidos</h2>
+      <div id="lista-pedidos" class="lista-pedidos grid-pedidos">
+        <p class="vacio">No hay pedidos por el momento.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/cocinero.js"></script>
+</body>
+</html>

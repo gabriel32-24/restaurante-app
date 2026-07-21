@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interfaz del Mozo</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🧑‍🍳 Interfaz del Mozo</h1>
+    <div class="topbar-usuario">
+      <span id="nombre-usuario"></span>
+      <button id="btn-logout" class="btn-secundario">Salir</button>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="panel">
+      <h2>Nuevo Pedido</h2>
+      <form id="form-pedido">
+        <label for="mesa">Mesa</label>
+        <select id="mesa" required>
+          <option value="">Selecciona una mesa</option>
+          <option>Mesa 1</option>
+          <option>Mesa 2</option>
+          <option>Mesa 3</option>
+          <option>Mesa 4</option>
+          <option>Mesa 5</option>
+          <option>Mesa 6</option>
+        </select>
+
+        <fieldset class="platos-fieldset">
+          <legend>Platos</legend>
+          <label class="checkbox"><input type="checkbox" name="plato" value="Hamburguesa" /> Hamburguesa</label>
+          <label class="checkbox"><input type="checkbox" name="plato" value="Ensalada César" /> Ensalada César</label>
+          <label class="checkbox"><input type="checkbox" name="plato" value="Pizza" /> Pizza</label>
+          <label class="checkbox"><input type="checkbox" name="plato" value="Pasta" /> Pasta</label>
+          <label class="checkbox"><input type="checkbox" name="plato" value="Refresco" /> Refresco</label>
+          <label class="checkbox"><input type="checkbox" name="plato" value="Jugo Natural" /> Jugo Natural</label>
+        </fieldset>
+
+        <button type="submit">Enviar Pedido a Cocina</button>
+        <p id="mensaje-pedido" class="mensaje-error"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Mis Pedidos</h2>
+      <div id="lista-pedidos" class="lista-pedidos">
+        <p class="vacio">Aún no has creado pedidos.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast oculto"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/mozo.js"></script>
+</body>
+</html>
